@@ -1,4 +1,4 @@
-FontAwesome+iOS
+JAFontAwesome
 ===================
 
 Font awesome is an iconic font. Read more about it on http://fortawesome.github.com/Font-Awesome/
@@ -7,8 +7,11 @@ This category brings this great iconic font on iOS.
 
 Usage
 --------------------
+First, add to your podfile.
 
-First, make sure you have `FontAwesome.ttf` bundled in your project and that `UIAppFonts` key in the project's plist file contains a String item named `FontAwesome.ttf` 
+	pod 'JAFontAwesome'
+
+Then, make sure you have `FontAwesome.ttf` bundled in your project and that `UIAppFonts` key in the project's plist file contains a String item named `FontAwesome.ttf` 
 Then add the `NSString+FontAwesome` category to the project.
 
 	UILabel *label = [...]
@@ -38,4 +41,4 @@ It is possible to use one the font-awesome icon as a default placeholder for an 
 License
 -------------------
 
-This project uses the FontAwesome fix made by Pit Garbe that you can find at https://github.com/leberwurstsaft/FontAwesome-for-iOS Version 2.0 of the Font Awesome font, CSS, and LESS files are licensed under CC BY 3.0: http://creativecommons.org/licenses/by/3.0/ A mention of 'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable source code is considered acceptable attribution (most common on the web). If human readable source code is not available to the end user, a mention in an 'About' or 'Credits' screen is considered acceptable (most common in desktop or mobile software)
+Originally forked from Alex Drone from https://github.com/alexdrone/ios-fontawesome. This project uses the String+FontAwesome.swift addition from Riz which can be found at https://github.com/rsattar/ios-fontawesome. This project also uses the FontAwesome fix made by Pit Garbe that you can find at https://github.com/leberwurstsaft/FontAwesome-for-iOS Version 2.0 of the Font Awesome font, CSS, and LESS files are licensed under CC BY 3.0: http://creativecommons.org/licenses/by/3.0/ A mention of 'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable source code is considered acceptable attribution (most common on the web). If human readable source code is not available to the end user, a mention in an 'About' or 'Credits' screen is considered acceptable (most common in desktop or mobile software)
