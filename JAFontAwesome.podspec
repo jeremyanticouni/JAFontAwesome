@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JAFontAwesome"
-  s.version      = "4.3.0"
+  s.version      = "4.3.1"
   s.summary      = "Category that makes FontAwesome even easier for iOS."
   s.homepage     = "https://github.com/jeremyanticouni/JAFontAwesome"
   s.license      = {
@@ -10,7 +10,7 @@ Originally forked from Alex Drone from https://github.com/alexdrone/ios-fontawes
     LICENSE
   }
   s.author       = { "Jeremy Anticouni" => "jeremy@anticouni.net" }
-  s.source       = { :git => "https://github.com/jeremyanticouni/JAFontAwesome.git", :tag => '4.3.0.1'}
+  s.source       = { :git => "https://github.com/jeremyanticouni/JAFontAwesome.git", :tag => '4.3.1'}
   s.platform     = :ios, '5.0'
   s.source_files = '*.{h,m}'
   s.exclude_files = 'Demo'
