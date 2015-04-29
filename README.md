@@ -1,44 +1,55 @@
 JAFontAwesome
 ===================
 
-Font awesome is an iconic font. Read more about it on http://fortawesome.github.com/Font-Awesome/
+Font awesome is, well, awesome. If you don't know about it, [go here](https://github.com/FortAwesome/Font-Awesome), we'll wait. 
 
-This category brings this great iconic font on iOS.
+This category makes it drop-dead simple to use in iOS.
 
-Usage
---------------------
-First, add to your podfile.
+## Installation
+First, you'll need to tell Xcode that you want to include the FontAwesome font.  the font file and add it to your Xcode project.
+
+1. [Download `fontawesome-webfont.ttf`](https://github.com/FortAwesome/Font-Awesome/tree/master/fonts).
+2. Drag it into your Xcode project. When prompted, make sure these options are selected: 'Copy items if needed,' 'Create groups,' and there is a tickmark next to your target.
+3. In your `Info.plist`, look for `Fonts provided by application` or `UIAppFonts`. If it doesn't exist, add it, making sure that it is an `array`.
+4. Add a new string to the `UIAppFonts` array: `fontawesome-webfont.ttf`.
+	
+Next, assuming CocoaPods is already installed, simply add JAFontAwesome to your podfile and then run `pod update`:
 
 	pod 'JAFontAwesome'
 
-Then, make sure you have `FontAwesome.ttf` bundled in your project and that `UIAppFonts` key in the project's plist file contains a String item named `FontAwesome.ttf` 
-Then add the `NSString+FontAwesome` category to the project.
+If you need to install CocoaPods, [go here](https://guides.cocoapods.org/using/getting-started.html).
 
-	UILabel *label = [...]
-	label.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
-	
-You can now use enums for all the different iconic characters
+Finally, add the `NSString+FontAwesome` category to the project:
 
-	
-	label.text = [NSString fontAwesomeIconStringForEnum:FAGithub];
-or you can reference them by using the class identifiers listed here http://fortawesome.github.com/Font-Awesome/#all-icons
+```objc
+#import "NSString+FontAwesome.h"
+```
 
-	
-	label.text = [NSString fontAwesomeIconStringForIconIdentifier:@"fa-github"];
-That's it!
-For further information have a look to the small demo project!
+##Usage
 
-FAImageView
---------------------
+First, let's create a label and define the size and font:
+```objc
+UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+label.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+```
+Now, we can use enums to display an icon..
 
-FAImageView is now extended and contains a new property called `defaultView` that is shown when the image is set to nil.
-It is possible to use one the font-awesome icon as a default placeholder for an image view.
+```objc
+label.text = [NSString fontAwesomeIconStringForEnum:FAGithub];
+```
 
-	FAImageView *imageView = [[FAImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, 100.f, 100.f)];
-    imageView.image = nil;
-    [imageView setDefaultIconIdentifier:@"fa-github"];
+..or you can reference them by using the class identifiers listed [here](http://fortawesome.github.io/Font-Awesome/cheatsheet/), like so:
+
+```objc
+label.text = [NSString fontAwesomeIconStringForIconIdentifier:@"fa-github"];
+```	
+
+Enjoy!
+
 
 License
 -------------------
 
-Originally forked from Alex Drone from https://github.com/alexdrone/ios-fontawesome. This project uses the String+FontAwesome.swift addition from Riz which can be found at https://github.com/rsattar/ios-fontawesome. This project also uses the FontAwesome fix made by Pit Garbe that you can find at https://github.com/leberwurstsaft/FontAwesome-for-iOS Version 2.0 of the Font Awesome font, CSS, and LESS files are licensed under CC BY 3.0: http://creativecommons.org/licenses/by/3.0/ A mention of 'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable source code is considered acceptable attribution (most common on the web). If human readable source code is not available to the end user, a mention in an 'About' or 'Credits' screen is considered acceptable (most common in desktop or mobile software)
+Originally forked from Alex Drone's [ios-fontawesome](https://github.com/alexdrone/ios-fontawesome) and uses the String+FontAwesome.swift addition from [Riz](https://github.com/rsattar/ios-fontawesome). This project also uses the FontAwesome fix made by [Pit Garbe](https://github.com/leberwurstsaft/FontAwesome-for-iOS).
+
+A mention of 'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable source code is considered acceptable attribution (most common on the web). If human readable source code is not available to the end user, a mention in an 'About' or 'Credits' screen is considered acceptable (most common in desktop or mobile software.)
